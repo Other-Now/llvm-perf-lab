@@ -1,0 +1,216 @@
+
+============================= C2-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 528    7             rce.Kernels::stencil (43 bytes)
+ total in heap  [0x000076773c88e790,0x000076773c88ece0] = 1360
+ relocation     [0x000076773c88e8e8,0x000076773c88e918] = 48
+ constants      [0x000076773c88e920,0x000076773c88e940] = 32
+ main code      [0x000076773c88e940,0x000076773c88ec30] = 752
+ stub code      [0x000076773c88ec30,0x000076773c88ec48] = 24
+ oops           [0x000076773c88ec48,0x000076773c88ec50] = 8
+ metadata       [0x000076773c88ec50,0x000076773c88ec58] = 8
+ scopes data    [0x000076773c88ec58,0x000076773c88ec80] = 40
+ scopes pcs     [0x000076773c88ec80,0x000076773c88ecc0] = 64
+ dependencies   [0x000076773c88ecc0,0x000076773c88ecc8] = 8
+ nul chk table  [0x000076773c88ecc8,0x000076773c88ece0] = 24
+
+[Disassembly]
+--------------------------------------------------------------------------------
+
+[Constant Pool]
+             Address          hex4                    hex8      
+  0x000076773c88e920:   0x3e800000      0x3f0000003e800000      
+  0x000076773c88e924:   0x3f000000                              
+  0x000076773c88e928:   0xf4f4f4f4      0xf4f4f4f4f4f4f4f4      
+  0x000076773c88e92c:   0xf4f4f4f4                              
+  0x000076773c88e930:   0xf4f4f4f4      0xf4f4f4f4f4f4f4f4      
+  0x000076773c88e934:   0xf4f4f4f4                              
+  0x000076773c88e938:   0xf4f4f4f4      0xf4f4f4f4f4f4f4f4      
+  0x000076773c88e93c:   0xf4f4f4f4                              
+
+--------------------------------------------------------------------------------
+
+[Verified Entry Point]
+  # {method} {0x00007676db400dc8} 'stencil' '([F[FI)V' in 'rce/Kernels'
+  # parm0:    rsi:rsi   = '[F'
+  # parm1:    rdx:rdx   = '[F'
+  # parm2:    rcx       = int
+  #           [sp+0x40]  (sp of caller)
+  0x000076773c88e940:   mov		dword ptr [rsp - 0x14000], eax
+                                                            ;   {no_reloc}
+  0x000076773c88e947:   push		rbp
+  0x000076773c88e948:   sub		rsp, 0x30
+  0x000076773c88e94c:   cmp		dword ptr [r15 + 0x20], 1
+  0x000076773c88e954:   jne		0x76773c88ec26
+  0x000076773c88e95a:   mov		ebp, ecx
+  0x000076773c88e95c:   dec		ebp
+  0x000076773c88e95e:   nop		
+  0x000076773c88e960:   cmp		ebp, 1
+  0x000076773c88e963:   jle		0x76773c88ebdc
+  0x000076773c88e969:   mov		r9d, dword ptr [rdx + 0xc]
+                                                            ; implicit exception: dispatches to 0x000076773c88ebef
+  0x000076773c88e96d:   test		r9d, r9d
+  0x000076773c88e970:   jbe		0x76773c88ebef
+  0x000076773c88e976:   movsxd		r10, r9d
+  0x000076773c88e979:   movsxd		r11, ebp
+  0x000076773c88e97c:   lea		r8, [r11 - 2]
+  0x000076773c88e980:   cmp		r8, r10
+  0x000076773c88e983:   jae		0x76773c88ebef
+  0x000076773c88e989:   cmp		r9d, 1
+  0x000076773c88e98d:   jbe		0x76773c88ebef
+  0x000076773c88e993:   mov		r8, r11
+  0x000076773c88e996:   dec		r8
+  0x000076773c88e999:   nop		dword ptr [rax]
+  0x000076773c88e9a0:   cmp		r8, r10
+  0x000076773c88e9a3:   jae		0x76773c88ebef
+  0x000076773c88e9a9:   cmp		r9d, 2
+  0x000076773c88e9ad:   jbe		0x76773c88ebef
+  0x000076773c88e9b3:   cmp		r11, r10
+  0x000076773c88e9b6:   jae		0x76773c88ebef
+  0x000076773c88e9bc:   nop		dword ptr [rax]
+  0x000076773c88e9c0:   mov		r9d, dword ptr [rsi + 0xc]
+                                                            ; implicit exception: dispatches to 0x000076773c88ebef
+  0x000076773c88e9c4:   cmp		r9d, 1
+  0x000076773c88e9c8:   jbe		0x76773c88ebef
+  0x000076773c88e9ce:   movsxd		r10, r9d
+  0x000076773c88e9d1:   cmp		r8, r10
+  0x000076773c88e9d4:   jae		0x76773c88ebef
+  0x000076773c88e9da:   vmovss		xmm0, dword ptr [rdx + 0x14]
+  0x000076773c88e9df:   vmovss		xmm2, dword ptr [rdx + 0x10]
+  0x000076773c88e9e4:   add		r11, -7
+  0x000076773c88e9e8:   mov		r10, -0x80000000
+  0x000076773c88e9ef:   cmp		r11, -0x80000000
+  0x000076773c88e9f6:   cmovl		r11, r10
+  0x000076773c88e9fa:   mov		r10d, r11d
+  0x000076773c88e9fd:   vmulss		xmm2, xmm2, dword ptr [rip - 0xe5]
+                                                            ;   {section_word}
+  0x000076773c88ea05:   vmulss		xmm0, xmm0, dword ptr [rip - 0xe9]
+                                                            ;   {section_word}
+  0x000076773c88ea0d:   vaddss		xmm1, xmm2, xmm0
+  0x000076773c88ea11:   vmovss		xmm5, dword ptr [rip - 0xf5]
+                                                            ;   {section_word}
+  0x000076773c88ea19:   vmovss		xmm4, dword ptr [rip - 0x101]
+                                                            ;   {section_word}
+  0x000076773c88ea21:   vmulss		xmm0, xmm4, dword ptr [rdx + 0x18]
+  0x000076773c88ea26:   vaddss		xmm1, xmm0, xmm1
+  0x000076773c88ea2a:   vmovss		dword ptr [rsi + 0x14], xmm1
+  0x000076773c88ea2f:   mov		r11d, 2
+  0x000076773c88ea35:   cmp		r10d, 2
+  0x000076773c88ea39:   jle		0x76773c88eba9
+  0x000076773c88ea3f:   xor		r8d, r8d
+  0x000076773c88ea42:   mov		r9d, 0x1f40
+  0x000076773c88ea48:   mov		edi, r10d
+  0x000076773c88ea4b:   sub		edi, r11d
+  0x000076773c88ea4e:   cmp		r10d, r11d
+  0x000076773c88ea51:   cmovl		edi, r8d
+  0x000076773c88ea55:   cmp		edi, 0x1f40
+  0x000076773c88ea5b:   cmova		edi, r9d
+  0x000076773c88ea5f:   add		edi, r11d
+  0x000076773c88ea62:   vmulss		xmm0, xmm5, dword ptr [rdx + r11*4 + 0x10]
+  0x000076773c88ea69:   vmulss		xmm2, xmm4, dword ptr [rdx + r11*4 + 0xc]
+  0x000076773c88ea70:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x14]
+  0x000076773c88ea77:   vaddss		xmm2, xmm2, xmm0
+  0x000076773c88ea7b:   vaddss		xmm0, xmm1, xmm2
+  0x000076773c88ea7f:   vmovss		dword ptr [rsi + r11*4 + 0x10], xmm0
+  0x000076773c88ea86:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x10]
+  0x000076773c88ea8d:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x18]
+  0x000076773c88ea94:   vmulss		xmm3, xmm5, dword ptr [rdx + r11*4 + 0x14]
+  0x000076773c88ea9b:   vaddss		xmm1, xmm1, xmm3
+  0x000076773c88ea9f:   vaddss		xmm1, xmm1, xmm0
+  0x000076773c88eaa3:   vmovss		dword ptr [rsi + r11*4 + 0x14], xmm1
+  0x000076773c88eaaa:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x1c]
+  0x000076773c88eab1:   vmulss		xmm2, xmm4, dword ptr [rdx + r11*4 + 0x14]
+  0x000076773c88eab8:   vmulss		xmm1, xmm5, dword ptr [rdx + r11*4 + 0x18]
+  0x000076773c88eabf:   vaddss		xmm2, xmm1, xmm2
+  0x000076773c88eac3:   vaddss		xmm0, xmm0, xmm2
+  0x000076773c88eac7:   vmovss		dword ptr [rsi + r11*4 + 0x18], xmm0
+  0x000076773c88eace:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x18]
+  0x000076773c88ead5:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x20]
+  0x000076773c88eadc:   vmulss		xmm3, xmm5, dword ptr [rdx + r11*4 + 0x1c]
+  0x000076773c88eae3:   vaddss		xmm1, xmm1, xmm3
+  0x000076773c88eae7:   vaddss		xmm1, xmm1, xmm0
+  0x000076773c88eaeb:   vmovss		dword ptr [rsi + r11*4 + 0x1c], xmm1
+  0x000076773c88eaf2:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x24]
+  0x000076773c88eaf9:   vmulss		xmm2, xmm5, dword ptr [rdx + r11*4 + 0x20]
+  0x000076773c88eb00:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x1c]
+  0x000076773c88eb07:   vaddss		xmm2, xmm1, xmm2
+  0x000076773c88eb0b:   vaddss		xmm0, xmm0, xmm2
+  0x000076773c88eb0f:   vmovss		dword ptr [rsi + r11*4 + 0x20], xmm0
+  0x000076773c88eb16:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x20]
+                                                            ;   {no_reloc}
+  0x000076773c88eb1d:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x28]
+  0x000076773c88eb24:   vmulss		xmm3, xmm5, dword ptr [rdx + r11*4 + 0x24]
+  0x000076773c88eb2b:   vaddss		xmm1, xmm1, xmm3
+  0x000076773c88eb2f:   vaddss		xmm1, xmm1, xmm0
+  0x000076773c88eb33:   vmovss		dword ptr [rsi + r11*4 + 0x24], xmm1
+  0x000076773c88eb3a:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x2c]
+  0x000076773c88eb41:   vmulss		xmm2, xmm5, dword ptr [rdx + r11*4 + 0x28]
+  0x000076773c88eb48:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x24]
+  0x000076773c88eb4f:   vaddss		xmm2, xmm1, xmm2
+  0x000076773c88eb53:   vaddss		xmm0, xmm0, xmm2
+  0x000076773c88eb57:   vmovss		dword ptr [rsi + r11*4 + 0x28], xmm0
+  0x000076773c88eb5e:   vmulss		xmm1, xmm4, dword ptr [rdx + r11*4 + 0x28]
+  0x000076773c88eb65:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0x30]
+  0x000076773c88eb6c:   vmulss		xmm3, xmm5, dword ptr [rdx + r11*4 + 0x2c]
+  0x000076773c88eb73:   vaddss		xmm1, xmm1, xmm3
+  0x000076773c88eb77:   vaddss		xmm1, xmm1, xmm0
+  0x000076773c88eb7b:   vmovss		dword ptr [rsi + r11*4 + 0x2c], xmm1
+  0x000076773c88eb82:   add		r11d, 8
+  0x000076773c88eb86:   cmp		r11d, edi
+  0x000076773c88eb89:   jl		0x76773c88ea62
+  0x000076773c88eb8f:   mov		rbx, qword ptr [r15 + 0x458]
+                                                            ; ImmutableOopMap {rdx=Oop rsi=Oop }
+                                                            ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                                                            ; - (reexecute) rce.Kernels::stencil@39 (line 30)
+  0x000076773c88eb96:   test		dword ptr [rbx], eax;   {poll}
+  0x000076773c88eb98:   nop		dword ptr [rax + rax]
+  0x000076773c88eba0:   cmp		r11d, r10d
+  0x000076773c88eba3:   jl		0x76773c88ea48
+  0x000076773c88eba9:   cmp		r11d, ebp
+  0x000076773c88ebac:   jge		0x76773c88ebdc
+  0x000076773c88ebae:   nop		
+  0x000076773c88ebb0:   vmulss		xmm1, xmm5, dword ptr [rdx + r11*4 + 0x10]
+  0x000076773c88ebb7:   vmulss		xmm0, xmm4, dword ptr [rdx + r11*4 + 0xc]
+  0x000076773c88ebbe:   vmulss		xmm3, xmm4, dword ptr [rdx + r11*4 + 0x14]
+  0x000076773c88ebc5:   vaddss		xmm0, xmm0, xmm1
+  0x000076773c88ebc9:   vaddss		xmm1, xmm3, xmm0
+  0x000076773c88ebcd:   vmovss		dword ptr [rsi + r11*4 + 0x10], xmm1
+  0x000076773c88ebd4:   inc		r11d
+  0x000076773c88ebd7:   cmp		r11d, ebp
+  0x000076773c88ebda:   jl		0x76773c88ebb0
+  0x000076773c88ebdc:   add		rsp, 0x30
+  0x000076773c88ebe0:   pop		rbp
+  0x000076773c88ebe1:   cmp		rsp, qword ptr [r15 + 0x450]
+                                                            ;   {poll_return}
+  0x000076773c88ebe8:   ja		0x76773c88ec10
+  0x000076773c88ebee:   ret		
+  0x000076773c88ebef:   mov		qword ptr [rsp], rsi
+  0x000076773c88ebf3:   mov		qword ptr [rsp + 8], rdx
+  0x000076773c88ebf8:   mov		dword ptr [rsp + 0x10], ecx
+  0x000076773c88ebfc:   mov		esi, 0xffffff76
+  0x000076773c88ec01:   nop		
+  0x000076773c88ec03:   call		0x76773c853f00      ; ImmutableOopMap {[0]=Oop [8]=Oop }
+                                                            ;*if_icmpge {reexecute=1 rethrow=0 return_oop=0}
+                                                            ; - (reexecute) rce.Kernels::stencil@6 (line 30)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000076773c88ec08:   nop		dword ptr [rax + rax + 0x1000478]
+                                                            ;   {other}
+  0x000076773c88ec10:   movabs		r10, 0x76773c88ebe1 ;   {internal_word}
+  0x000076773c88ec1a:   mov		qword ptr [r15 + 0x468], r10
+  0x000076773c88ec21:   jmp		0x76773c855000      ;   {runtime_call SafepointBlob}
+  0x000076773c88ec26:   call		0x76773c834480      ;   {runtime_call StubRoutines (final stubs)}
+  0x000076773c88ec2b:   jmp		0x76773c88e95a
+[Exception Handler]
+  0x000076773c88ec30:   jmp		0x76773c881580      ;   {no_reloc}
+[Deopt Handler Code]
+  0x000076773c88ec35:   call		0x76773c88ec3a
+  0x000076773c88ec3a:   sub		qword ptr [rsp], 5
+  0x000076773c88ec3f:   jmp		0x76773c8542a0      ;   {runtime_call DeoptimizationBlob}
+  0x000076773c88ec44:   hlt		
+  0x000076773c88ec45:   hlt		
+  0x000076773c88ec46:   hlt		
+  0x000076773c88ec47:   hlt		
+--------------------------------------------------------------------------------
+[/Disassembly]
+sink=94165740000 5.0 15

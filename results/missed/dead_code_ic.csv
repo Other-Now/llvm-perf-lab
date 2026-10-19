@@ -1,0 +1,16 @@
+dead_instruction,knob,interleave_count
+"; (none)",default,4
+"; (none)",-force-target-num-vector-regs=64,4
+"; (none)",instcombine-first,4
+"%dead = add i64 %i, 7",default,2
+"%dead = add i64 %i, 7",-force-target-num-vector-regs=64,4
+"%dead = add i64 %i, 7",instcombine-first,4
+"%dead = icmp ult i64 %i, %len",default,2
+"%dead = icmp ult i64 %i, %len",-force-target-num-vector-regs=64,4
+"%dead = icmp ult i64 %i, %len",instcombine-first,4
+"%dead = add i64 %len, 1",default,4
+"%dead = add i64 %len, 1",-force-target-num-vector-regs=64,4
+"%dead = add i64 %len, 1",instcombine-first,4
+"%dead = fmul float %r, 3.0",default,4
+"%dead = fmul float %r, 3.0",-force-target-num-vector-regs=64,4
+"%dead = fmul float %r, 3.0",instcombine-first,4

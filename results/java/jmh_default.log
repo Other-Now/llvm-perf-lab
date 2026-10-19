@@ -1,0 +1,609 @@
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.div
+
+# Run progress: 0.00% complete, ETA 00:01:12
+# Fork: 1 of 3
+# Warmup Iteration   1: 9098.600 ns/op
+# Warmup Iteration   2: 8040.483 ns/op
+# Warmup Iteration   3: 7218.948 ns/op
+# Warmup Iteration   4: 7013.121 ns/op
+# Warmup Iteration   5: 6721.043 ns/op
+Iteration   1: 7327.005 ns/op
+Iteration   2: 7241.665 ns/op
+Iteration   3: 7493.978 ns/op
+Iteration   4: 7153.096 ns/op
+Iteration   5: 7549.802 ns/op
+Iteration   6: 7662.428 ns/op
+Iteration   7: 9473.936 ns/op
+Iteration   8: 8673.459 ns/op
+Iteration   9: 7913.641 ns/op
+Iteration  10: 7994.501 ns/op
+
+# Run progress: 4.17% complete, ETA 00:01:19
+# Fork: 2 of 3
+# Warmup Iteration   1: 7782.279 ns/op
+# Warmup Iteration   2: 7133.581 ns/op
+# Warmup Iteration   3: 7783.298 ns/op
+# Warmup Iteration   4: 7247.681 ns/op
+# Warmup Iteration   5: 7373.061 ns/op
+Iteration   1: 7544.302 ns/op
+Iteration   2: 7193.510 ns/op
+Iteration   3: 7190.152 ns/op
+Iteration   4: 7828.590 ns/op
+Iteration   5: 7483.246 ns/op
+Iteration   6: 7686.984 ns/op
+Iteration   7: 7125.902 ns/op
+Iteration   8: 7183.840 ns/op
+Iteration   9: 7434.564 ns/op
+Iteration  10: 9509.233 ns/op
+
+# Run progress: 8.33% complete, ETA 00:01:18
+# Fork: 3 of 3
+# Warmup Iteration   1: 7711.450 ns/op
+# Warmup Iteration   2: 7385.107 ns/op
+# Warmup Iteration   3: 8098.992 ns/op
+# Warmup Iteration   4: 7189.536 ns/op
+# Warmup Iteration   5: 6930.348 ns/op
+Iteration   1: 8893.161 ns/op
+Iteration   2: 12513.018 ns/op
+Iteration   3: 11963.497 ns/op
+Iteration   4: 8980.785 ns/op
+Iteration   5: 8166.453 ns/op
+Iteration   6: 7864.626 ns/op
+Iteration   7: 17153.276 ns/op
+Iteration   8: 10933.515 ns/op
+Iteration   9: 8828.342 ns/op
+Iteration  10: 11919.814 ns/op
+
+
+Result "rce.KernelsBench.div":
+  8729.344 ±(99.9%) 1474.504 ns/op [Average]
+  (min, avg, max) = (7125.902, 8729.344, 17153.276), stdev = 2206.968
+  CI (99.9%): [7254.840, 10203.848] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.gather
+
+# Run progress: 12.50% complete, ETA 00:01:13
+# Fork: 1 of 3
+# Warmup Iteration   1: 1446.525 ns/op
+# Warmup Iteration   2: 1171.256 ns/op
+# Warmup Iteration   3: 1040.520 ns/op
+# Warmup Iteration   4: 1127.038 ns/op
+# Warmup Iteration   5: 1513.346 ns/op
+Iteration   1: 1647.441 ns/op
+Iteration   2: 1374.068 ns/op
+Iteration   3: 1618.290 ns/op
+Iteration   4: 1404.371 ns/op
+Iteration   5: 1916.092 ns/op
+Iteration   6: 3439.157 ns/op
+Iteration   7: 2511.005 ns/op
+Iteration   8: 1885.759 ns/op
+Iteration   9: 2045.528 ns/op
+Iteration  10: 1874.619 ns/op
+
+# Run progress: 16.67% complete, ETA 00:01:09
+# Fork: 2 of 3
+# Warmup Iteration   1: 1821.452 ns/op
+# Warmup Iteration   2: 1588.492 ns/op
+# Warmup Iteration   3: 1334.534 ns/op
+# Warmup Iteration   4: 1201.830 ns/op
+# Warmup Iteration   5: 1207.319 ns/op
+Iteration   1: 1100.756 ns/op
+Iteration   2: 1074.112 ns/op
+Iteration   3: 1696.530 ns/op
+Iteration   4: 3500.407 ns/op
+Iteration   5: 4346.834 ns/op
+Iteration   6: 3904.867 ns/op
+Iteration   7: 4267.969 ns/op
+Iteration   8: 3258.129 ns/op
+Iteration   9: 2353.133 ns/op
+Iteration  10: 2650.793 ns/op
+
+# Run progress: 20.83% complete, ETA 00:01:06
+# Fork: 3 of 3
+# Warmup Iteration   1: 2710.193 ns/op
+# Warmup Iteration   2: 3388.154 ns/op
+# Warmup Iteration   3: 2068.620 ns/op
+# Warmup Iteration   4: 4364.352 ns/op
+# Warmup Iteration   5: 3640.222 ns/op
+Iteration   1: 4508.002 ns/op
+Iteration   2: 2030.628 ns/op
+Iteration   3: 1805.640 ns/op
+Iteration   4: 1568.890 ns/op
+Iteration   5: 1379.059 ns/op
+Iteration   6: 1166.844 ns/op
+Iteration   7: 1228.513 ns/op
+Iteration   8: 1207.782 ns/op
+Iteration   9: 1314.476 ns/op
+Iteration  10: 1144.802 ns/op
+
+
+Result "rce.KernelsBench.gather":
+  2174.150 ±(99.9%) 711.789 ns/op [Average]
+  (min, avg, max) = (1074.112, 2174.150, 4508.002), stdev = 1065.373
+  CI (99.9%): [1462.361, 2885.939] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.jcopy
+
+# Run progress: 25.00% complete, ETA 00:01:03
+# Fork: 1 of 3
+# Warmup Iteration   1: 174.445 ns/op
+# Warmup Iteration   2: 176.102 ns/op
+# Warmup Iteration   3: 162.722 ns/op
+# Warmup Iteration   4: 176.569 ns/op
+# Warmup Iteration   5: 159.342 ns/op
+Iteration   1: 163.415 ns/op
+Iteration   2: 154.718 ns/op
+Iteration   3: 161.915 ns/op
+Iteration   4: 163.944 ns/op
+Iteration   5: 163.424 ns/op
+Iteration   6: 159.465 ns/op
+Iteration   7: 146.215 ns/op
+Iteration   8: 150.245 ns/op
+Iteration   9: 165.929 ns/op
+Iteration  10: 176.951 ns/op
+
+# Run progress: 29.17% complete, ETA 00:00:59
+# Fork: 2 of 3
+# Warmup Iteration   1: 338.614 ns/op
+# Warmup Iteration   2: 200.285 ns/op
+# Warmup Iteration   3: 206.878 ns/op
+# Warmup Iteration   4: 170.516 ns/op
+# Warmup Iteration   5: 192.521 ns/op
+Iteration   1: 167.620 ns/op
+Iteration   2: 200.149 ns/op
+Iteration   3: 247.635 ns/op
+Iteration   4: 227.562 ns/op
+Iteration   5: 225.580 ns/op
+Iteration   6: 216.154 ns/op
+Iteration   7: 170.510 ns/op
+Iteration   8: 189.396 ns/op
+Iteration   9: 161.436 ns/op
+Iteration  10: 170.739 ns/op
+
+# Run progress: 33.33% complete, ETA 00:00:57
+# Fork: 3 of 3
+# Warmup Iteration   1: 208.722 ns/op
+# Warmup Iteration   2: 197.372 ns/op
+# Warmup Iteration   3: 196.367 ns/op
+# Warmup Iteration   4: 192.546 ns/op
+# Warmup Iteration   5: 184.194 ns/op
+Iteration   1: 196.373 ns/op
+Iteration   2: 236.849 ns/op
+Iteration   3: 225.884 ns/op
+Iteration   4: 173.423 ns/op
+Iteration   5: 168.428 ns/op
+Iteration   6: 166.169 ns/op
+Iteration   7: 197.337 ns/op
+Iteration   8: 208.417 ns/op
+Iteration   9: 229.763 ns/op
+Iteration  10: 201.942 ns/op
+
+
+Result "rce.KernelsBench.jcopy":
+  186.253 ±(99.9%) 19.493 ns/op [Average]
+  (min, avg, max) = (146.215, 186.253, 247.635), stdev = 29.176
+  CI (99.9%): [166.760, 205.746] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.saxpy
+
+# Run progress: 37.50% complete, ETA 00:00:53
+# Fork: 1 of 3
+# Warmup Iteration   1: 480.576 ns/op
+# Warmup Iteration   2: 363.929 ns/op
+# Warmup Iteration   3: 401.499 ns/op
+# Warmup Iteration   4: 398.295 ns/op
+# Warmup Iteration   5: 292.177 ns/op
+Iteration   1: 295.090 ns/op
+Iteration   2: 230.328 ns/op
+Iteration   3: 260.940 ns/op
+Iteration   4: 247.813 ns/op
+Iteration   5: 225.877 ns/op
+Iteration   6: 204.714 ns/op
+Iteration   7: 210.678 ns/op
+Iteration   8: 214.025 ns/op
+Iteration   9: 201.071 ns/op
+Iteration  10: 211.939 ns/op
+
+# Run progress: 41.67% complete, ETA 00:00:49
+# Fork: 2 of 3
+# Warmup Iteration   1: 243.498 ns/op
+# Warmup Iteration   2: 222.632 ns/op
+# Warmup Iteration   3: 206.697 ns/op
+# Warmup Iteration   4: 290.157 ns/op
+# Warmup Iteration   5: 223.230 ns/op
+Iteration   1: 223.788 ns/op
+Iteration   2: 216.859 ns/op
+Iteration   3: 223.788 ns/op
+Iteration   4: 216.221 ns/op
+Iteration   5: 218.787 ns/op
+Iteration   6: 226.734 ns/op
+Iteration   7: 241.103 ns/op
+Iteration   8: 239.956 ns/op
+Iteration   9: 244.948 ns/op
+Iteration  10: 258.358 ns/op
+
+# Run progress: 45.83% complete, ETA 00:00:45
+# Fork: 3 of 3
+# Warmup Iteration   1: 305.104 ns/op
+# Warmup Iteration   2: 365.373 ns/op
+# Warmup Iteration   3: 350.631 ns/op
+# Warmup Iteration   4: 348.590 ns/op
+# Warmup Iteration   5: 262.431 ns/op
+Iteration   1: 311.352 ns/op
+Iteration   2: 310.159 ns/op
+Iteration   3: 290.903 ns/op
+Iteration   4: 233.876 ns/op
+Iteration   5: 247.049 ns/op
+Iteration   6: 259.383 ns/op
+Iteration   7: 243.561 ns/op
+Iteration   8: 282.269 ns/op
+Iteration   9: 233.357 ns/op
+Iteration  10: 247.718 ns/op
+
+
+Result "rce.KernelsBench.saxpy":
+  242.422 ±(99.9%) 20.128 ns/op [Average]
+  (min, avg, max) = (201.071, 242.422, 311.352), stdev = 30.126
+  CI (99.9%): [222.294, 262.549] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.stencil
+
+# Run progress: 50.00% complete, ETA 00:00:42
+# Fork: 1 of 3
+# Warmup Iteration   1: 6138.460 ns/op
+# Warmup Iteration   2: 3748.669 ns/op
+# Warmup Iteration   3: 4502.593 ns/op
+# Warmup Iteration   4: 7755.552 ns/op
+# Warmup Iteration   5: 7546.036 ns/op
+Iteration   1: 2867.125 ns/op
+Iteration   2: 2579.901 ns/op
+Iteration   3: 2510.914 ns/op
+Iteration   4: 2776.600 ns/op
+Iteration   5: 2502.409 ns/op
+Iteration   6: 2593.052 ns/op
+Iteration   7: 2743.682 ns/op
+Iteration   8: 2516.874 ns/op
+Iteration   9: 2640.259 ns/op
+Iteration  10: 2909.774 ns/op
+
+# Run progress: 54.17% complete, ETA 00:00:39
+# Fork: 2 of 3
+# Warmup Iteration   1: 3199.062 ns/op
+# Warmup Iteration   2: 2726.019 ns/op
+# Warmup Iteration   3: 2457.214 ns/op
+# Warmup Iteration   4: 2671.882 ns/op
+# Warmup Iteration   5: 2429.308 ns/op
+Iteration   1: 2636.012 ns/op
+Iteration   2: 2914.719 ns/op
+Iteration   3: 3172.957 ns/op
+Iteration   4: 2710.839 ns/op
+Iteration   5: 2338.388 ns/op
+Iteration   6: 4338.502 ns/op
+Iteration   7: 2699.828 ns/op
+Iteration   8: 2653.079 ns/op
+Iteration   9: 2941.678 ns/op
+Iteration  10: 3015.950 ns/op
+
+# Run progress: 58.33% complete, ETA 00:00:35
+# Fork: 3 of 3
+# Warmup Iteration   1: 3928.537 ns/op
+# Warmup Iteration   2: 2665.925 ns/op
+# Warmup Iteration   3: 2654.104 ns/op
+# Warmup Iteration   4: 2963.093 ns/op
+# Warmup Iteration   5: 3743.749 ns/op
+Iteration   1: 3563.846 ns/op
+Iteration   2: 2669.310 ns/op
+Iteration   3: 2859.686 ns/op
+Iteration   4: 2630.394 ns/op
+Iteration   5: 2949.977 ns/op
+Iteration   6: 3016.809 ns/op
+Iteration   7: 2527.545 ns/op
+Iteration   8: 3767.812 ns/op
+Iteration   9: 2474.593 ns/op
+Iteration  10: 3245.792 ns/op
+
+
+Result "rce.KernelsBench.stencil":
+  2858.944 ±(99.9%) 282.055 ns/op [Average]
+  (min, avg, max) = (2338.388, 2858.944, 4338.502), stdev = 422.166
+  CI (99.9%): [2576.889, 3140.998] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.stencilFresh
+
+# Run progress: 62.50% complete, ETA 00:00:31
+# Fork: 1 of 3
+# Warmup Iteration   1: 12538.638 ns/op
+# Warmup Iteration   2: 7830.537 ns/op
+# Warmup Iteration   3: 8110.960 ns/op
+# Warmup Iteration   4: 18916.777 ns/op
+# Warmup Iteration   5: 11802.733 ns/op
+Iteration   1: 7398.738 ns/op
+Iteration   2: 6073.369 ns/op
+Iteration   3: 5990.744 ns/op
+Iteration   4: 8212.914 ns/op
+Iteration   5: 7456.097 ns/op
+Iteration   6: 5865.220 ns/op
+Iteration   7: 6183.392 ns/op
+Iteration   8: 5869.689 ns/op
+Iteration   9: 6980.580 ns/op
+Iteration  10: 6751.215 ns/op
+
+# Run progress: 66.67% complete, ETA 00:00:28
+# Fork: 2 of 3
+# Warmup Iteration   1: 8764.328 ns/op
+# Warmup Iteration   2: 6388.480 ns/op
+# Warmup Iteration   3: 4245.440 ns/op
+# Warmup Iteration   4: 4721.242 ns/op
+# Warmup Iteration   5: 4997.268 ns/op
+Iteration   1: 4721.994 ns/op
+Iteration   2: 6283.520 ns/op
+Iteration   3: 7337.708 ns/op
+Iteration   4: 5706.564 ns/op
+Iteration   5: 5071.125 ns/op
+Iteration   6: 5116.629 ns/op
+Iteration   7: 11583.607 ns/op
+Iteration   8: 5729.203 ns/op
+Iteration   9: 5893.626 ns/op
+Iteration  10: 12844.020 ns/op
+
+# Run progress: 70.83% complete, ETA 00:00:24
+# Fork: 3 of 3
+# Warmup Iteration   1: 8840.015 ns/op
+# Warmup Iteration   2: 13268.690 ns/op
+# Warmup Iteration   3: 6019.909 ns/op
+# Warmup Iteration   4: 4178.125 ns/op
+# Warmup Iteration   5: 7106.977 ns/op
+Iteration   1: 19137.104 ns/op
+Iteration   2: 9877.075 ns/op
+Iteration   3: 5957.486 ns/op
+Iteration   4: 5353.970 ns/op
+Iteration   5: 4755.796 ns/op
+Iteration   6: 4879.055 ns/op
+Iteration   7: 5333.557 ns/op
+Iteration   8: 7262.762 ns/op
+Iteration   9: 5612.431 ns/op
+Iteration  10: 5157.226 ns/op
+
+
+Result "rce.KernelsBench.stencilFresh":
+  7013.214 ±(99.9%) 1988.333 ns/op [Average]
+  (min, avg, max) = (4721.994, 7013.214, 19137.104), stdev = 2976.043
+  CI (99.9%): [5024.881, 9001.547] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.sumLen
+
+# Run progress: 75.00% complete, ETA 00:00:21
+# Fork: 1 of 3
+# Warmup Iteration   1: 297.817 ns/op
+# Warmup Iteration   2: 386.617 ns/op
+# Warmup Iteration   3: 384.401 ns/op
+# Warmup Iteration   4: 307.959 ns/op
+# Warmup Iteration   5: 358.440 ns/op
+Iteration   1: 271.274 ns/op
+Iteration   2: 327.921 ns/op
+Iteration   3: 479.390 ns/op
+Iteration   4: 383.974 ns/op
+Iteration   5: 381.090 ns/op
+Iteration   6: 277.227 ns/op
+Iteration   7: 276.745 ns/op
+Iteration   8: 261.700 ns/op
+Iteration   9: 262.625 ns/op
+Iteration  10: 243.999 ns/op
+
+# Run progress: 79.17% complete, ETA 00:00:17
+# Fork: 2 of 3
+# Warmup Iteration   1: 282.967 ns/op
+# Warmup Iteration   2: 272.018 ns/op
+# Warmup Iteration   3: 250.506 ns/op
+# Warmup Iteration   4: 252.885 ns/op
+# Warmup Iteration   5: 241.192 ns/op
+Iteration   1: 247.884 ns/op
+Iteration   2: 249.931 ns/op
+Iteration   3: 261.965 ns/op
+Iteration   4: 261.360 ns/op
+Iteration   5: 257.843 ns/op
+Iteration   6: 243.837 ns/op
+Iteration   7: 269.989 ns/op
+Iteration   8: 264.078 ns/op
+Iteration   9: 252.520 ns/op
+Iteration  10: 242.112 ns/op
+
+# Run progress: 83.33% complete, ETA 00:00:14
+# Fork: 3 of 3
+# Warmup Iteration   1: 316.324 ns/op
+# Warmup Iteration   2: 284.445 ns/op
+# Warmup Iteration   3: 261.826 ns/op
+# Warmup Iteration   4: 253.080 ns/op
+# Warmup Iteration   5: 257.840 ns/op
+Iteration   1: 248.029 ns/op
+Iteration   2: 261.160 ns/op
+Iteration   3: 249.245 ns/op
+Iteration   4: 314.785 ns/op
+Iteration   5: 312.325 ns/op
+Iteration   6: 274.442 ns/op
+Iteration   7: 268.744 ns/op
+Iteration   8: 253.335 ns/op
+Iteration   9: 262.259 ns/op
+Iteration  10: 247.559 ns/op
+
+
+Result "rce.KernelsBench.sumLen":
+  280.312 ±(99.9%) 34.843 ns/op [Average]
+  (min, avg, max) = (242.112, 280.312, 479.390), stdev = 52.151
+  CI (99.9%): [245.469, 315.154] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: /home/chiku/jdk21/bin/java
+# VM options: -Xmx512m
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 200 ms each
+# Measurement: 10 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: rce.KernelsBench.sumN
+
+# Run progress: 87.50% complete, ETA 00:00:10
+# Fork: 1 of 3
+# Warmup Iteration   1: 306.692 ns/op
+# Warmup Iteration   2: 253.818 ns/op
+# Warmup Iteration   3: 274.016 ns/op
+# Warmup Iteration   4: 275.554 ns/op
+# Warmup Iteration   5: 257.461 ns/op
+Iteration   1: 267.575 ns/op
+Iteration   2: 250.283 ns/op
+Iteration   3: 263.464 ns/op
+Iteration   4: 317.830 ns/op
+Iteration   5: 301.841 ns/op
+Iteration   6: 261.815 ns/op
+Iteration   7: 343.522 ns/op
+Iteration   8: 263.291 ns/op
+Iteration   9: 255.457 ns/op
+Iteration  10: 255.550 ns/op
+
+# Run progress: 91.67% complete, ETA 00:00:07
+# Fork: 2 of 3
+# Warmup Iteration   1: 353.054 ns/op
+# Warmup Iteration   2: 281.312 ns/op
+# Warmup Iteration   3: 324.815 ns/op
+# Warmup Iteration   4: 313.890 ns/op
+# Warmup Iteration   5: 327.333 ns/op
+Iteration   1: 261.125 ns/op
+Iteration   2: 267.828 ns/op
+Iteration   3: 263.865 ns/op
+Iteration   4: 257.286 ns/op
+Iteration   5: 264.833 ns/op
+Iteration   6: 280.765 ns/op
+Iteration   7: 254.246 ns/op
+Iteration   8: 253.049 ns/op
+Iteration   9: 261.142 ns/op
+Iteration  10: 255.424 ns/op
+
+# Run progress: 95.83% complete, ETA 00:00:03
+# Fork: 3 of 3
+# Warmup Iteration   1: 312.235 ns/op
+# Warmup Iteration   2: 300.653 ns/op
+# Warmup Iteration   3: 270.046 ns/op
+# Warmup Iteration   4: 259.445 ns/op
+# Warmup Iteration   5: 264.577 ns/op
+Iteration   1: 313.450 ns/op
+Iteration   2: 277.741 ns/op
+Iteration   3: 256.807 ns/op
+Iteration   4: 252.560 ns/op
+Iteration   5: 256.261 ns/op
+Iteration   6: 256.002 ns/op
+Iteration   7: 291.027 ns/op
+Iteration   8: 261.271 ns/op
+Iteration   9: 263.761 ns/op
+Iteration  10: 262.608 ns/op
+
+
+Result "rce.KernelsBench.sumN":
+  269.723 ±(99.9%) 14.861 ns/op [Average]
+  (min, avg, max) = (250.283, 269.723, 343.522), stdev = 22.244
+  CI (99.9%): [254.861, 284.584] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:24
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                  Mode  Cnt     Score      Error  Units
+KernelsBench.div           avgt   30  8729.344 ± 1474.504  ns/op
+KernelsBench.gather        avgt   30  2174.150 ±  711.789  ns/op
+KernelsBench.jcopy         avgt   30   186.253 ±   19.493  ns/op
+KernelsBench.saxpy         avgt   30   242.422 ±   20.128  ns/op
+KernelsBench.stencil       avgt   30  2858.944 ±  282.055  ns/op
+KernelsBench.stencilFresh  avgt   30  7013.214 ± 1988.333  ns/op
+KernelsBench.sumLen        avgt   30   280.312 ±   34.843  ns/op
+KernelsBench.sumN          avgt   30   269.723 ±   14.861  ns/op
+
+Benchmark result is saved to results/java/jmh_default.csv

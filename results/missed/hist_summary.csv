@@ -1,0 +1,10 @@
+x86-avx2,hist_count,not vectorized,histcnt=0
+x86-avx2,hist_count_sum,not vectorized,histcnt=0
+x86-avx512,hist_count,not vectorized,histcnt=0
+x86-avx512,hist_count_sum,not vectorized,histcnt=0
+x86-avx512+histflag,hist_count,width: 8, interleaved count: 1,histcnt=0
+x86-avx512+histflag,hist_count_sum,not vectorized,histcnt=0
+sve2,hist_count,not vectorized,histcnt=0
+sve2,hist_count_sum,not vectorized,histcnt=0
+sve2+histflag,hist_count,width: vscale x 4, interleaved count: 2,histcnt=2
+sve2+histflag,hist_count_sum,not vectorized,histcnt=2

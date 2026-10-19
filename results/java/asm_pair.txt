@@ -1,0 +1,161 @@
+
+============================= C2-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 688   10             rce.Kernels::pair (28 bytes)
+ total in heap  [0x00007d5abc88d410,0x00007d5abc88d850] = 1088
+ relocation     [0x00007d5abc88d568,0x00007d5abc88d580] = 24
+ main code      [0x00007d5abc88d580,0x00007d5abc88d7a0] = 544
+ stub code      [0x00007d5abc88d7a0,0x00007d5abc88d7b8] = 24
+ oops           [0x00007d5abc88d7b8,0x00007d5abc88d7c0] = 8
+ metadata       [0x00007d5abc88d7c0,0x00007d5abc88d7c8] = 8
+ scopes data    [0x00007d5abc88d7c8,0x00007d5abc88d7f0] = 40
+ scopes pcs     [0x00007d5abc88d7f0,0x00007d5abc88d830] = 64
+ dependencies   [0x00007d5abc88d830,0x00007d5abc88d838] = 8
+ nul chk table  [0x00007d5abc88d838,0x00007d5abc88d850] = 24
+
+[Disassembly]
+--------------------------------------------------------------------------------
+[Constant Pool (empty)]
+
+--------------------------------------------------------------------------------
+
+[Verified Entry Point]
+  # {method} {0x00007d5a58401130} 'pair' '([F[FI)V' in 'rce/Kernels'
+  # parm0:    rsi:rsi   = '[F'
+  # parm1:    rdx:rdx   = '[F'
+  # parm2:    rcx       = int
+  #           [sp+0x40]  (sp of caller)
+  0x00007d5abc88d580:   mov		dword ptr [rsp - 0x14000], eax
+  0x00007d5abc88d587:   push		rbp
+  0x00007d5abc88d588:   sub		rsp, 0x30
+  0x00007d5abc88d58c:   cmp		dword ptr [r15 + 0x20], 1
+  0x00007d5abc88d594:   jne		0x7d5abc88d796
+  0x00007d5abc88d59a:   mov		ebp, ecx
+  0x00007d5abc88d59c:   dec		ebp
+  0x00007d5abc88d59e:   nop		
+  0x00007d5abc88d5a0:   cmp		ebp, 1
+  0x00007d5abc88d5a3:   jle		0x7d5abc88d74d
+  0x00007d5abc88d5a9:   mov		r11d, dword ptr [rdx + 0xc]
+                                                            ; implicit exception: dispatches to 0x00007d5abc88d760
+  0x00007d5abc88d5ad:   cmp		r11d, 1
+  0x00007d5abc88d5b1:   jbe		0x7d5abc88d760
+  0x00007d5abc88d5b7:   movsxd		r10, r11d
+  0x00007d5abc88d5ba:   movsxd		r8, ebp
+  0x00007d5abc88d5bd:   mov		r9, r8
+  0x00007d5abc88d5c0:   dec		r9
+  0x00007d5abc88d5c3:   cmp		r9, r10
+  0x00007d5abc88d5c6:   jae		0x7d5abc88d760
+  0x00007d5abc88d5cc:   cmp		r11d, 2
+  0x00007d5abc88d5d0:   jbe		0x7d5abc88d760
+  0x00007d5abc88d5d6:   cmp		r8, r10
+  0x00007d5abc88d5d9:   jae		0x7d5abc88d760
+  0x00007d5abc88d5df:   nop		
+  0x00007d5abc88d5e0:   mov		r11d, dword ptr [rsi + 0xc]
+                                                            ; implicit exception: dispatches to 0x00007d5abc88d760
+  0x00007d5abc88d5e4:   cmp		r11d, 1
+  0x00007d5abc88d5e8:   jbe		0x7d5abc88d760
+  0x00007d5abc88d5ee:   movsxd		r10, r11d
+  0x00007d5abc88d5f1:   cmp		r9, r10
+  0x00007d5abc88d5f4:   jae		0x7d5abc88d760
+  0x00007d5abc88d5fa:   vmovss		xmm0, dword ptr [rdx + 0x14]
+  0x00007d5abc88d5ff:   vaddss		xmm1, xmm0, dword ptr [rdx + 0x18]
+  0x00007d5abc88d604:   vmovss		dword ptr [rsi + 0x14], xmm1
+  0x00007d5abc88d609:   add		r8, -7
+  0x00007d5abc88d60d:   mov		r10, -0x80000000
+  0x00007d5abc88d614:   cmp		r8, -0x80000000
+  0x00007d5abc88d61b:   cmovl		r8, r10
+  0x00007d5abc88d61f:   mov		r10d, r8d
+  0x00007d5abc88d622:   mov		r8d, 2
+  0x00007d5abc88d628:   cmp		r10d, 2
+  0x00007d5abc88d62c:   jle		0x7d5abc88d729
+  0x00007d5abc88d632:   xor		r9d, r9d
+  0x00007d5abc88d635:   mov		ebx, 0x1f40
+  0x00007d5abc88d63a:   mov		r11d, r10d
+  0x00007d5abc88d63d:   sub		r11d, r8d
+  0x00007d5abc88d640:   cmp		r10d, r8d
+  0x00007d5abc88d643:   cmovl		r11d, r9d
+  0x00007d5abc88d647:   cmp		r11d, 0x1f40
+  0x00007d5abc88d64e:   cmova		r11d, ebx
+  0x00007d5abc88d652:   add		r11d, r8d
+  0x00007d5abc88d655:   nop		word ptr [rax + rax]
+  0x00007d5abc88d660:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x10]
+  0x00007d5abc88d667:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x14]
+  0x00007d5abc88d66e:   vmovss		dword ptr [rsi + r8*4 + 0x10], xmm0
+  0x00007d5abc88d675:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x14]
+  0x00007d5abc88d67c:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x18]
+                                                            ;   {no_reloc}
+  0x00007d5abc88d683:   vmovss		dword ptr [rsi + r8*4 + 0x14], xmm0
+  0x00007d5abc88d68a:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x18]
+  0x00007d5abc88d691:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x1c]
+  0x00007d5abc88d698:   vmovss		dword ptr [rsi + r8*4 + 0x18], xmm0
+  0x00007d5abc88d69f:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x1c]
+  0x00007d5abc88d6a6:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x20]
+  0x00007d5abc88d6ad:   vmovss		dword ptr [rsi + r8*4 + 0x1c], xmm0
+  0x00007d5abc88d6b4:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x20]
+  0x00007d5abc88d6bb:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x24]
+  0x00007d5abc88d6c2:   vmovss		dword ptr [rsi + r8*4 + 0x20], xmm0
+  0x00007d5abc88d6c9:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x24]
+  0x00007d5abc88d6d0:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x28]
+  0x00007d5abc88d6d7:   vmovss		dword ptr [rsi + r8*4 + 0x24], xmm0
+  0x00007d5abc88d6de:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x28]
+  0x00007d5abc88d6e5:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x2c]
+  0x00007d5abc88d6ec:   vmovss		dword ptr [rsi + r8*4 + 0x28], xmm0
+  0x00007d5abc88d6f3:   vmovss		xmm1, dword ptr [rdx + r8*4 + 0x2c]
+  0x00007d5abc88d6fa:   vaddss		xmm0, xmm1, dword ptr [rdx + r8*4 + 0x30]
+  0x00007d5abc88d701:   vmovss		dword ptr [rsi + r8*4 + 0x2c], xmm0
+  0x00007d5abc88d708:   add		r8d, 8
+  0x00007d5abc88d70c:   cmp		r8d, r11d
+  0x00007d5abc88d70f:   jl		0x7d5abc88d660
+  0x00007d5abc88d715:   mov		r11, qword ptr [r15 + 0x458]
+                                                            ; ImmutableOopMap {rdx=Oop rsi=Oop }
+                                                            ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                                                            ; - (reexecute) rce.Kernels::pair@24 (line 51)
+  0x00007d5abc88d71c:   test		dword ptr [r11], eax;   {poll}
+  0x00007d5abc88d71f:   nop		
+  0x00007d5abc88d720:   cmp		r8d, r10d
+  0x00007d5abc88d723:   jl		0x7d5abc88d63a
+  0x00007d5abc88d729:   cmp		r8d, ebp
+  0x00007d5abc88d72c:   jge		0x7d5abc88d74d
+  0x00007d5abc88d72e:   nop		
+  0x00007d5abc88d730:   vmovss		xmm0, dword ptr [rdx + r8*4 + 0x10]
+  0x00007d5abc88d737:   vaddss		xmm1, xmm0, dword ptr [rdx + r8*4 + 0x14]
+  0x00007d5abc88d73e:   vmovss		dword ptr [rsi + r8*4 + 0x10], xmm1
+  0x00007d5abc88d745:   inc		r8d
+  0x00007d5abc88d748:   cmp		r8d, ebp
+  0x00007d5abc88d74b:   jl		0x7d5abc88d730
+  0x00007d5abc88d74d:   add		rsp, 0x30
+  0x00007d5abc88d751:   pop		rbp
+  0x00007d5abc88d752:   cmp		rsp, qword ptr [r15 + 0x450]
+                                                            ;   {poll_return}
+  0x00007d5abc88d759:   ja		0x7d5abc88d780
+  0x00007d5abc88d75f:   ret		
+  0x00007d5abc88d760:   mov		qword ptr [rsp], rsi
+  0x00007d5abc88d764:   mov		qword ptr [rsp + 8], rdx
+  0x00007d5abc88d769:   mov		dword ptr [rsp + 0x10], ecx
+  0x00007d5abc88d76d:   mov		esi, 0xffffff76
+  0x00007d5abc88d772:   nop		
+  0x00007d5abc88d773:   call		0x7d5abc853f00      ; ImmutableOopMap {[0]=Oop [8]=Oop }
+                                                            ;*if_icmpge {reexecute=1 rethrow=0 return_oop=0}
+                                                            ; - (reexecute) rce.Kernels::pair@6 (line 51)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x00007d5abc88d778:   nop		dword ptr [rax + rax + 0x1000368]
+                                                            ;   {other}
+  0x00007d5abc88d780:   movabs		r10, 0x7d5abc88d752 ;   {internal_word}
+  0x00007d5abc88d78a:   mov		qword ptr [r15 + 0x468], r10
+  0x00007d5abc88d791:   jmp		0x7d5abc855000      ;   {runtime_call SafepointBlob}
+  0x00007d5abc88d796:   call		0x7d5abc834480      ;   {runtime_call StubRoutines (final stubs)}
+  0x00007d5abc88d79b:   jmp		0x7d5abc88d59a
+[Exception Handler]
+  0x00007d5abc88d7a0:   jmp		0x7d5abc881f80      ;   {no_reloc}
+[Deopt Handler Code]
+  0x00007d5abc88d7a5:   call		0x7d5abc88d7aa
+  0x00007d5abc88d7aa:   sub		qword ptr [rsp], 5
+  0x00007d5abc88d7af:   jmp		0x7d5abc8542a0      ;   {runtime_call DeoptimizationBlob}
+  0x00007d5abc88d7b4:   hlt		
+  0x00007d5abc88d7b5:   hlt		
+  0x00007d5abc88d7b6:   hlt		
+  0x00007d5abc88d7b7:   hlt		
+--------------------------------------------------------------------------------
+[/Disassembly]
+sink=94165740000 9.0 15

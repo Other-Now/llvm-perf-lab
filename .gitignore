@@ -1,0 +1,6 @@
+build/
+*.o
+*.so
+*.bc
+test/Output/
+test/.lit_test_times.txt

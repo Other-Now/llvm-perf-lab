@@ -1,0 +1,126 @@
+Iterations:        200
+Instructions:      4200
+Total Cycles:      913
+Total uOps:        4200
+
+Dispatch Width:    6
+uOps Per Cycle:    4.60
+IPC:               4.60
+Block RThroughput: 4.5
+
+
+Cycles with backend pressure increase [ 96.60% ]
+Throughput Bottlenecks: 
+  Resource Pressure       [ 96.60% ]
+  - SKLPort2  [ 96.60% ]
+  - SKLPort3  [ 96.60% ]
+  Data Dependencies:      [ 43.37% ]
+  - Register Dependencies [ 43.37% ]
+  - Memory Dependencies   [ 0.00% ]
+
+Critical sequence based on the simulation:
+
+              Instruction                                 Dependency Information
+ +----< 13.   vbroadcastss	(%rbx,%r15), %ymm9
+ |
+ |    < loop carried > 
+ |
+ +----> 0.    vmovups	(%rdx), %ymm8                     ## RESOURCE interference:  SKLPort3 [ probability: 49% ]
+ +----> 1.    vbroadcastss	(%rdi,%r15), %ymm9        ## RESOURCE interference:  SKLPort3 [ probability: 49% ]
+ |      2.    vfmadd231ps	%ymm9, %ymm8, %ymm0
+ +----> 3.    vbroadcastss	(%r12,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      4.    vfmadd231ps	%ymm9, %ymm8, %ymm1
+ +----> 5.    vbroadcastss	(%r13,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      6.    vfmadd231ps	%ymm9, %ymm8, %ymm2
+ +----> 7.    vbroadcastss	(%rbp,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      8.    vfmadd231ps	%ymm9, %ymm8, %ymm3
+ +----> 9.    vbroadcastss	(%r10,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      10.   vfmadd231ps	%ymm9, %ymm8, %ymm4
+ +----> 11.   vbroadcastss	(%r11,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      12.   vfmadd231ps	%ymm9, %ymm8, %ymm5
+ +----> 13.   vbroadcastss	(%rbx,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      14.   vfmadd231ps	%ymm9, %ymm8, %ymm6
+ +----> 15.   vbroadcastss	(%r14,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+ |      16.   vfmadd231ps	%ymm9, %ymm8, %ymm7
+ |      17.   addq	$4, %r15
+ |      18.   addq	%rcx, %rdx
+ |      19.   cmpq	%r15, %rsi
+ |      20.   jne	.LBB1_2
+ |
+ |    < loop carried > 
+ |
+ +----> 1.    vbroadcastss	(%rdi,%r15), %ymm9        ## RESOURCE interference:  SKLPort2 [ probability: 49% ]
+
+
+Instruction Info:
+[1]: #uOps
+[2]: Latency
+[3]: RThroughput
+[4]: MayLoad
+[5]: MayStore
+[6]: HasSideEffects (U)
+
+[1]    [2]    [3]    [4]    [5]    [6]    Instructions:
+ 1      7     0.50    *                   vmovups	(%rdx), %ymm8
+ 1      7     0.50    *                   vbroadcastss	(%rdi,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm0
+ 1      7     0.50    *                   vbroadcastss	(%r12,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm1
+ 1      7     0.50    *                   vbroadcastss	(%r13,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm2
+ 1      7     0.50    *                   vbroadcastss	(%rbp,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm3
+ 1      7     0.50    *                   vbroadcastss	(%r10,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm4
+ 1      7     0.50    *                   vbroadcastss	(%r11,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm5
+ 1      7     0.50    *                   vbroadcastss	(%rbx,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm6
+ 1      7     0.50    *                   vbroadcastss	(%r14,%r15), %ymm9
+ 1      4     0.50                        vfmadd231ps	%ymm9, %ymm8, %ymm7
+ 1      1     0.25                        addq	$4, %r15
+ 1      1     0.25                        addq	%rcx, %rdx
+ 1      1     0.25                        cmpq	%r15, %rsi
+ 1      1     0.50                        jne	.LBB1_2
+
+
+Resources:
+[0]   - SKLDivider
+[1]   - SKLFPDivider
+[2]   - SKLPort0
+[3]   - SKLPort1
+[4]   - SKLPort2
+[5]   - SKLPort3
+[6]   - SKLPort4
+[7]   - SKLPort5
+[8]   - SKLPort6
+[9]   - SKLPort7
+
+
+Resource pressure per iteration:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    
+ -      -     4.01   4.01   4.50   4.50    -     1.99   2.00    -     
+
+Resource pressure by instruction:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    Instructions:
+ -      -      -      -     0.50   0.51    -      -      -      -     vmovups	(%rdx), %ymm8
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%rdi,%r15), %ymm9
+ -      -     1.00   0.01    -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm0
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%r12,%r15), %ymm9
+ -      -      -     1.00    -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm1
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%r13,%r15), %ymm9
+ -      -     1.00    -      -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm2
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%rbp,%r15), %ymm9
+ -      -      -     1.00    -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm3
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%r10,%r15), %ymm9
+ -      -     1.00    -      -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm4
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%r11,%r15), %ymm9
+ -      -      -     1.00    -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm5
+ -      -      -      -     0.50   0.50    -      -      -      -     vbroadcastss	(%rbx,%r15), %ymm9
+ -      -     1.00    -      -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm6
+ -      -      -      -     0.51   0.50    -      -      -      -     vbroadcastss	(%r14,%r15), %ymm9
+ -      -      -     1.00    -      -      -      -      -      -     vfmadd231ps	%ymm9, %ymm8, %ymm7
+ -      -      -      -      -      -      -     0.99   0.01    -     addq	$4, %r15
+ -      -      -      -      -      -      -     0.01   0.99    -     addq	%rcx, %rdx
+ -      -     0.01   0.01    -      -      -     0.99    -      -     cmpq	%r15, %rsi
+ -      -     0.01    -      -      -      -      -     1.00    -     jne	.LBB1_2

@@ -1,0 +1,164 @@
+Iterations:        200
+Instructions:      5800
+Total Cycles:      812
+Total uOps:        6200
+
+Dispatch Width:    16
+uOps Per Cycle:    7.64
+IPC:               7.14
+Block RThroughput: 4.0
+
+
+Cycles with backend pressure increase [ 26.35% ]
+Throughput Bottlenecks: 
+  Resource Pressure       [ 26.35% ]
+  - V2UnitL2  [ 7.14% ]
+  - V2UnitL01  [ 7.14% ]
+  - V2UnitV0  [ 25.37% ]
+  - V2UnitV1  [ 25.37% ]
+  - V2UnitV2  [ 25.37% ]
+  - V2UnitV3  [ 25.37% ]
+  Data Dependencies:      [ 26.35% ]
+  - Register Dependencies [ 26.35% ]
+  - Memory Dependencies   [ 0.00% ]
+
+Critical sequence based on the simulation:
+
+              Instruction                                 Dependency Information
+ +----< 14.   ldr	s26, [x1, x15]
+ |
+ |    < loop carried > 
+ |
+ +----> 0.    ldp	q24, q25, [x2]                    ## RESOURCE interference:  V2UnitL01 [ probability: 14% ]
+ +----> 1.    ldr	s26, [x0, x15]                    ## RESOURCE interference:  V2UnitL01 [ probability: 13% ]
+ |      2.    add	x2, x2, x3
+ +----> 3.    fmla	v0.4s, v25.4s, v26.s[0]           ## REGISTER dependency:  s26
+ +----> 4.    fmla	v1.4s, v24.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV3 [ probability: 95% ]
+ |      5.    ldr	s26, [x16, x15]
+ +----> 6.    fmla	v3.4s, v25.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV2 [ probability: 95% ]
+ +----> 7.    fmla	v2.4s, v24.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV1 [ probability: 95% ]
+ |      8.    ldr	s26, [x17, x15]
+ +----> 9.    fmla	v5.4s, v25.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV0 [ probability: 95% ]
+ +----> 10.   fmla	v4.4s, v24.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV3 [ probability: 95% ]
+ |      11.   ldr	s26, [x18, x15]
+ +----> 12.   fmla	v7.4s, v25.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV2 [ probability: 95% ]
+ +----> 13.   fmla	v6.4s, v24.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV1 [ probability: 95% ]
+ |      14.   ldr	s26, [x1, x15]
+ +----> 15.   fmla	v17.4s, v25.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV0 [ probability: 95% ]
+ +----> 16.   fmla	v16.4s, v24.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV3 [ probability: 95% ]
+ |      17.   ldr	s26, [x5, x15]
+ +----> 18.   fmla	v19.4s, v25.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV2 [ probability: 94% ]
+ +----> 19.   fmla	v18.4s, v24.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV1 [ probability: 94% ]
+ |      20.   ldr	s26, [x7, x15]
+ +----> 21.   fmla	v21.4s, v25.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV0 [ probability: 95% ]
+ +----> 22.   fmla	v20.4s, v24.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV3 [ probability: 95% ]
+ |      23.   ldr	s26, [x19, x15]
+ |      24.   add	x15, x15, #4
+ +----> 25.   fmla	v23.4s, v25.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV2 [ probability: 94% ]
+ +----> 26.   fmla	v22.4s, v24.4s, v26.s[0]          ## RESOURCE interference:  V2UnitV1 [ probability: 94% ]
+ |      27.   cmp	x6, x15
+ |      28.   b.ne	.LBB1_2
+ |
+ |    < loop carried > 
+ |
+ +----> 3.    fmla	v0.4s, v25.4s, v26.s[0]           ## RESOURCE interference:  V2UnitV0 [ probability: 95% ]
+
+
+Instruction Info:
+[1]: #uOps
+[2]: Latency
+[3]: RThroughput
+[4]: MayLoad
+[5]: MayStore
+[6]: HasSideEffects (U)
+
+[1]    [2]    [3]    [4]    [5]    [6]    Instructions:
+ 3      6     0.67    *                   ldp	q24, q25, [x2]
+ 1      6     0.33    *                   ldr	s26, [x0, x15]
+ 1      1     0.17                        add	x2, x2, x3
+ 1      4     0.25                        fmla	v0.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v1.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x16, x15]
+ 1      4     0.25                        fmla	v3.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v2.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x17, x15]
+ 1      4     0.25                        fmla	v5.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v4.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x18, x15]
+ 1      4     0.25                        fmla	v7.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v6.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x1, x15]
+ 1      4     0.25                        fmla	v17.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v16.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x5, x15]
+ 1      4     0.25                        fmla	v19.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v18.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x7, x15]
+ 1      4     0.25                        fmla	v21.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v20.4s, v24.4s, v26.s[0]
+ 1      6     0.33    *                   ldr	s26, [x19, x15]
+ 1      1     0.17                        add	x15, x15, #4
+ 1      4     0.25                        fmla	v23.4s, v25.4s, v26.s[0]
+ 1      4     0.25                        fmla	v22.4s, v24.4s, v26.s[0]
+ 1      1     0.33                        cmp	x6, x15
+ 1      1     0.50                        b.ne	.LBB1_2
+
+
+Resources:
+[0.0] - V2UnitB
+[0.1] - V2UnitB
+[1.0] - V2UnitD
+[1.1] - V2UnitD
+[2.0] - V2UnitFlg
+[2.1] - V2UnitFlg
+[2.2] - V2UnitFlg
+[3]   - V2UnitL2
+[4.0] - V2UnitL01
+[4.1] - V2UnitL01
+[5]   - V2UnitM0
+[6]   - V2UnitM1
+[7]   - V2UnitS0
+[8]   - V2UnitS1
+[9]   - V2UnitS2
+[10]  - V2UnitS3
+[11]  - V2UnitV0
+[12]  - V2UnitV1
+[13]  - V2UnitV2
+[14]  - V2UnitV3
+
+
+Resource pressure per iteration:
+[0.0]  [0.1]  [1.0]  [1.1]  [2.0]  [2.1]  [2.2]  [3]    [4.0]  [4.1]  [5]    [6]    [7]    [8]    [9]    [10]   [11]   [12]   [13]   [14]   
+0.50   0.50    -      -     0.33   0.34   0.34   3.08   3.47   3.46   0.50   0.50   0.50   0.50   0.50   0.50   4.00   4.00   4.00   4.00   
+
+Resource pressure by instruction:
+[0.0]  [0.1]  [1.0]  [1.1]  [2.0]  [2.1]  [2.2]  [3]    [4.0]  [4.1]  [5]    [6]    [7]    [8]    [9]    [10]   [11]   [12]   [13]   [14]   Instructions:
+ -      -      -      -      -      -      -     0.16   0.93   0.91    -      -      -      -      -      -      -      -      -      -     ldp	q24, q25, [x2]
+ -      -      -      -      -      -      -     0.07   0.47   0.47    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x0, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -     0.50    -      -     0.50    -      -      -      -     add	x2, x2, x3
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00   fmla	v0.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -     fmla	v1.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.86   0.07   0.08    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x16, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -     fmla	v3.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -      -     fmla	v2.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.08   0.47   0.46    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x17, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00   fmla	v5.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -     fmla	v4.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.86   0.07   0.08    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x18, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -     fmla	v7.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -      -     fmla	v6.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.07   0.47   0.47    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x1, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00   fmla	v17.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -     fmla	v16.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.07   0.47   0.47    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x5, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -     fmla	v19.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -      -     fmla	v18.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.86   0.07   0.08    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x7, x15]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00   fmla	v21.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -     fmla	v20.4s, v24.4s, v26.s[0]
+ -      -      -      -      -      -      -     0.07   0.47   0.47    -      -      -      -      -      -      -      -      -      -     ldr	s26, [x19, x15]
+ -      -      -      -      -      -      -      -      -      -      -     0.50    -      -     0.50    -      -      -      -      -     add	x15, x15, #4
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -     fmla	v23.4s, v25.4s, v26.s[0]
+ -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     1.00    -      -      -     fmla	v22.4s, v24.4s, v26.s[0]
+ -      -      -      -     0.33   0.34   0.34    -      -      -     0.50    -      -     0.50    -      -      -      -      -      -     cmp	x6, x15
+0.50   0.50    -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -      -     b.ne	.LBB1_2

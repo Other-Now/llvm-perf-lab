@@ -1,0 +1,7 @@
+trials=200000 mismatches=0
+  sum      checked build trapped in 98174 of 200000 trials
+  saxpy    checked build trapped in 138661 of 200000 trials
+  stencil  checked build trapped in 138349 of 200000 trials
+  gather   checked build trapped in 191647 of 200000 trials
+  jcopy    checked build trapped in 138661 of 200000 trials
+  div      checked build trapped in 98174 of 200000 trials

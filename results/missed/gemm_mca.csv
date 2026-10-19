@@ -1,0 +1,5 @@
+target,kernel,loop_insns,mca_cycles_per_iter,mca_block_rthroughput,flops_per_iter,mca_flops_per_cycle
+skylake,axpy,15,4.08,4.0,64,15.7
+skylake,micro8x8,21,4.57,4.5,128,28.0
+neoverse-v2,axpy,12,12.03,2.7,32,2.7
+neoverse-v2,micro8x8,29,4.06,4.0,128,31.5
